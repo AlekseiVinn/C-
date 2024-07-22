@@ -1,0 +1,9 @@
+﻿  main.cpp
+  practice2.cpp
+E:\C++\practicalTask2\practice2.cpp(44,12): warning C4101: 'temp': unreferenced local variable
+E:\C++\practicalTask2\practice2.cpp(82,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\C++\practicalTask2\practice2.cpp(168,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\C++\practicalTask2\practice2.cpp(270,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+E:\C++\practicalTask2\practice2.cpp(191,1): warning C4715: 'snilsCheck': not all control paths return a value
+  practicalTask2.vcxproj -> E:\C++\practicalTask2\x64\Debug\practicalTask2.exe
