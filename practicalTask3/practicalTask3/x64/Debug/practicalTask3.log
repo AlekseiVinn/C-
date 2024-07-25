@@ -1,0 +1,6 @@
+﻿  main.cpp
+  practice3.cpp
+E:\C++\practicalTask3\practice3.cpp(70,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+E:\C++\practicalTask3\practice3.cpp(141,1): warning C4715: 'toBinary': not all control paths return a value
+  practicalTask3.vcxproj -> E:\C++\practicalTask3\x64\Debug\practicalTask3.exe
