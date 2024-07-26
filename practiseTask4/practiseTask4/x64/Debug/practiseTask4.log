@@ -1,0 +1,5 @@
+﻿  main.cpp
+E:\C++\practiseTask4\main.cpp(32,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  practise4.cpp
+  Generating Code...
+  practiseTask4.vcxproj -> E:\C++\practiseTask4\x64\Debug\practiseTask4.exe
