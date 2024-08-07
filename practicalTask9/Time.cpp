@@ -3,34 +3,53 @@
 
 #include "Time.h"
 
-Time::Time(int hrs, int min, int sec) {
-	if (hrs<0 || min <0 || sec <0)
-		throw std::range_error("Нельзя создавать временные метки с отрицательными значениями");
-
-	Time::seconds = sec % 60;
-	Time::minutes = (min + sec / 60) % 60;
-	Time::hours = hrs + (min + sec / 60) / 60;
-}
-
 std::ostream& operator<<(std::ostream& s, const Time& time) {
 	return s << time.hours << ":" << time.minutes << ":" << time.seconds;
 }
 
+//Time& Time::operator=(const Time& t)
+//{
+//	if (this == &t)
+//		return *this;
+//	this->~Time();
+//	return *new(this) Time(t);
 //
-//Time createTime(int a, int b, int c) {
-//	Time interval{ a,b,c };
-//	return interval;
 //}
-//
-//Time createTime(int a, int b) {
-//	Time interval;
-//	interval.minutes = a;
-//	interval.seconds = b;
-//	return interval;
-//}
-//
-//Time createTime(int a) {
-//	Time interval;
-//	interval.seconds = a;
-//	return interval;
-//}
+
+Time operator+(const Time &time1, float otherTime) {
+	Time time2 = Time(otherTime);
+	return (time1 + time2);
+}
+
+Time operator+(float otherTime, const Time& time1) {
+	Time time2 = Time(otherTime);
+	return (time1 + time2);
+}
+
+Time operator-(const Time& time1, float otherTime) {
+	Time time2 = Time(otherTime);
+	return (time1 - time2);
+}
+
+Time operator-(float otherTime, const Time& time1) {
+	Time time2 = Time(otherTime);
+	return (time2 - time1);
+}
+
+bool Time::operator>(const Time& otherTime) const {
+	return ((this->hours * this->HTS + this->minutes * 60 + this->seconds) >
+		(otherTime.hours * otherTime.HTS + otherTime.minutes * 60 + otherTime.seconds));
+}
+
+bool Time::operator<(const Time& otherTime) const {
+	return !(*this > otherTime);
+}
+
+bool Time::operator==(const Time& otherTime) const {
+	return ((this->hours * this->HTS + this->minutes * 60 + this->seconds) ==
+		(otherTime.hours * otherTime.HTS + otherTime.minutes * 60 + otherTime.seconds));
+}
+
+bool Time::operator!=(const Time& otherTime) const {
+	return !(*this == otherTime);
+}
