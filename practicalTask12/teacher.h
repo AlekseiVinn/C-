@@ -3,12 +3,17 @@
 #pragma once
 class Teacher : public Human {
 public:
-	Teacher(std::string last_name, std::string name, std::string second_name, unsigned int work_time) :
-		Human(last_name, name, second_name)
-	{
-		this->work_time = work_time;
+	void setInfo() {
+		Human::setInfo();
+		std::cout << "Введите количество рабочих часов: ";
+		std::cin >> work_time;
 	}
 
+	void getInfo() {
+		Human::getInfo();
+		std::cout << "Количество рабочих часов: " << get_work_time() << std::endl;
+	}
+	
 	unsigned int get_work_time() {
 		return this->work_time;
 	}

@@ -4,20 +4,23 @@
 class Human {
 public:
 
-	Human(std::string last_name, std::string name, std::string second_name)
+	virtual void setInfo()
 	{
-		this->last_name = last_name;
-		this->name = name;
-		this->second_name = second_name;
+		std::cout << "¬ведите фамилию: ";
+		std::cin >> last_name;
+		std::cout << "¬ведите им€: ";
+		std::cin >> name;
+		std::cout << "¬ведите отчество: ";
+		std::cin >> second_name;
 	}
 
-	std::string get_full_name()
+	virtual void getInfo()
 	{
 		std::ostringstream full_name;
 		full_name << this->last_name << " "
 			<< this->name << " "
 			<< this->second_name;
-		return full_name.str();
+		std::cout << full_name.str() << std::endl;
 	}
 private:
 	std::string name; // им€

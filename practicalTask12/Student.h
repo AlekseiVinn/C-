@@ -5,11 +5,22 @@
 #pragma once
 class Student : public Human {
 public:
-	// Конструктор класса Student
-	Student(std::string last_name, std::string name, std::string second_name,
-		std::vector<int> scores) : Human(last_name, name, second_name) {
-		this->scores = scores;
+
+	void setInfo() {
+		Human::setInfo();
+
+		std::cout << "Дневник ученика заполняется 10 псевдослучайными оценками от 0 д 5" << std::endl;
+		for (int i = 0; i < 10; i++)
+		{
+			scores.push_back(rand() % 6);
+		}
 	}
+
+	void getInfo() {
+		Human::getInfo();
+		std::cout << "Средний балл : " << get_average_score() << std::endl;
+	}
+
 	// Получение среднего балла студента
 	float get_average_score()
 	{
